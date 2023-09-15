@@ -1,0 +1,14 @@
+[Unit]
+Description=NAT service
+Documentation=man:iptables(7)
+DefaultDependencies=no
+Before=network.target
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+ExecStart=/usr/sbin/iptables -t nat -A POSTROUTING -o ens33 -j MASQUERADE
+ExecStop=/usr/sbin/iptables -t nat -D POSTROUTING -o ens33 -j MASQUERADE
+
+[Install]
+WantedBy=multi-user.target

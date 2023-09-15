@@ -1,0 +1,12 @@
+# This is the network config written by 'subiquity'
+network:
+  ethernets:
+    ens33:
+      addresses:
+      - 192.168.124.100/24
+      gateway4: 192.168.124.122
+      nameservers:
+        addresses: [77.88.8.8,8.8.8.8]
+        search: [skynet.local]
+  version: 2
+
